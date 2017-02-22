@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Signup / Login{% endblock title %}
+
+{% block content %}
+<header>
+	<h1 class="text-center">Bienvenido</h1>
+</header>
+<div class="row">
+	<div class=" col-md-6 text-center">
+		<h2>Registrate</h2>
+		<form role="form" method="POST">
+	    	{% csrf_token %}
+	    	{{ register.as_p }}
+			<button type="submit" name="register_form" class="btn btn-success ">Registrarse</button>
+		</form>
+	</div>
+	<div class=" col-md-6 text-center">
+		<h2>Ingresa</h2>
+		<form role="form" method="POST">
+	    	{% csrf_token %}
+	    	{{ login_form.as_p }}
+		<button type="submit" name="login_form" class="btn btn-success ">Iniciar</button>
+		</form>
+	</div>
+</div>
+{% endblock content %}
