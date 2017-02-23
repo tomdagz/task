@@ -132,3 +132,5 @@ STATIC_URL = '/static/'
 SUIT_CONFIG = {
     'ADMIN_NAME': 'Project Manager',
 }
+
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']

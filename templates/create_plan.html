@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Plan{% endblock title %}
+
+{% block content %}
+<header>
+	<h2 class="text-center">Crear nuevo Proyecto</h1>
+</header>
+<hr>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<form role="form" method="POST" class="form-horizontal">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit" name="submit" class="btn btn-success ">Crear proyecto</button>
+		</form>
+	</div>
+</div>
+{% endblock content %}

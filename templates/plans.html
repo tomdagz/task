@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Plans{% endblock title %}
+
+{% block content %}
+<header>
+	<h2 class="text-center">Plans</h1>
+</header>
+<hr>
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">Projectos</div>
+		  <!-- Table -->
+		  <table class="table">
+		  	<thead>
+		  		<tr>
+		  			<th>Nombre</th>
+		  			<th>Descripcion</th>
+		  			<th>Organizador</th>
+		  			<th>Acciones</th>
+		  		</tr>
+		  	</thead>
+		  	<tbody>
+		  		{% if object_list %}
+		  			{% for plan in object_list %}
+		  				<tr>
+		  					<td>{{plan.name}}</td>
+		  					<td>{{plan.sumary}}</td>
+		  					<td>{{plan.organizer}}</td>
+		  					<td></td>
+		  				</tr>
+		  			{% endfor %}
+		  		{% endif %}
+		  	</tbody>
+		  </table>
+		</div>
+		<a class="btn btn-primary" href="{% url 'site:create_plan' %}">Nuevo proyecto</a>
+	</div>
+</div>
+{% endblock content %}
